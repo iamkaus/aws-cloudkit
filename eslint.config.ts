@@ -4,48 +4,42 @@ import { defineConfig } from 'eslint/config';
 import tseslint from 'typescript-eslint';
 
 export default defineConfig(
-    {
-        files: [
-            '**/*.ts',
-            '**/*.tsx',
-        ],
+  {
+    files: ['**/*.ts', '**/*.tsx'],
 
-        extends: [
-            js.configs.recommended,
-            tseslint.configs.recommended,
-        ],
+    extends: [js.configs.recommended, tseslint.configs.recommended],
 
-        languageOptions: {
-            parser: tseslint.parser,
-            ecmaVersion: 'latest',
-            sourceType: 'module',
-        },
-
-        rules: {
-            '@typescript-eslint/no-explicit-any': 'warn',
-
-            '@typescript-eslint/no-unused-vars': [
-                'warn',
-                {
-                    argsIgnorePattern: '^_',
-                    varsIgnorePattern: '^_',
-                    caughtErrorsIgnorePattern: '^_',
-                },
-            ],
-
-            'no-console': 'off',
-        },
+    languageOptions: {
+      parser: tseslint.parser,
+      ecmaVersion: 'latest',
+      sourceType: 'module',
     },
 
-    {
-        ignores: [
-            '**/node_modules/**',
-            '**/dist/**',
-            '**/coverage/**',
-            '**/cdk.out/**',
-            '**/.aws-sam/**',
-        ],
-    },
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'warn',
 
-    prettier,
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+        },
+      ],
+
+      'no-console': 'off',
+    },
+  },
+
+  {
+    ignores: [
+      '**/node_modules/**',
+      '**/dist/**',
+      '**/coverage/**',
+      '**/cdk.out/**',
+      '**/.aws-sam/**',
+    ],
+  },
+
+  prettier,
 );
