@@ -1,0 +1,43 @@
+{
+  "name": "@aws/cloudkit",
+  "version": "1.0.0",
+  "description": "Reusable AWS infrastructure and service abstractions",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./s3": {
+      "types": "./dist/s3/index.d.ts",
+      "import": "./dist/s3/index.js"
+    },
+    "./sqs": {
+      "types": "./dist/sqs/index.d.ts",
+      "import": "./dist/sqs/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "iamkaus",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1116.0",
+    "@aws-sdk/client-secrets-manager": "^3.1116.0",
+    "@aws-sdk/client-sesv2": "^3.1116.0",
+    "@aws-sdk/client-sqs": "^3.1116.0",
+    "@aws-sdk/s3-request-presigner": "^3.1116.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.1",
+    "vitest": "^4.1.11"
+  }
+}
