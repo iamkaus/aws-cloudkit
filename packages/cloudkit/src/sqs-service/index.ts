@@ -1,23 +1,16 @@
-export { createSQSClient } from './client.js'
-export { sendMessage } from './sendMessage.js'
-export { receiveMessage } from './receiveMessage.js'
-export { sendMessageBatch } from './sendMessageBatch.js'
-export { deleteMessage } from './deleteMessage.js'
-export { deleteMessageBatch } from './deleteMessageBatch.js'
-export { changeMessageVisibility } from './changeMessageVisibility.js'
-export { changeMessageVisibilityBatch } from './changeMessageVisibilityBatch.js'
-
-
-// QUEUES
-// ────────────────────────
-// CreateQueue
-// DeleteQueue
-// GetQueueUrl
-// GetQueueAttributes
-// SetQueueAttributes
-// ListQueues
-// PurgeQueue
-
-// DLQ
-// ────────────────────────
-// ListDeadLetterSourceQueues
+export { createSQSClient } from './client.js';
+export { sendMessage } from './sendMessage.js';
+export { receiveMessage } from './receiveMessage.js';
+export { sendMessageBatch } from './sendMessageBatch.js';
+export { deleteMessage } from './deleteMessage.js';
+export { deleteMessageBatch } from './deleteMessageBatch.js';
+export { changeMessageVisibility } from './changeMessageVisibility.js';
+export { changeMessageVisibilityBatch } from './changeMessageVisibilityBatch.js';
+export { createSQSQueue } from './createQueue.js';
+export { deleteSQSQueue } from './deleteQueue.js';
+export { getQueueUrl } from './getQueueUrl.js';
+export { getQueueAttributes } from './getQueueAttributes.js';
+export { setQueueAttributes } from './setQueueAttributes.js';
+export { listQueues } from './listQueue.js';
+export { purgeQueues } from './purgeQueue.js';
+export { listDeadLetterSourceQueues } from './listDeadLetterSourceQueue.js';

@@ -1,20 +1,20 @@
 import {
-    SQSClient,
-    DeleteMessageCommand,
-    type DeleteMessageCommandInput,
-    type DeleteMessageCommandOutput,
+  SQSClient,
+  DeleteMessageCommand,
+  type DeleteMessageCommandInput,
+  type DeleteMessageCommandOutput,
 } from '@aws-sdk/client-sqs';
 
 type DeleteMessageParams = DeleteMessageCommandInput & {
-    client: SQSClient;
+  client: SQSClient;
 };
 
 export const deleteMessage = async (
-    params: DeleteMessageParams,
+  params: DeleteMessageParams,
 ): Promise<DeleteMessageCommandOutput> => {
-    const { client, ...awsSQSConfig } = params;
+  const { client, ...awsSQSConfig } = params;
 
-    const command = new DeleteMessageCommand(awsSQSConfig);
+  const command = new DeleteMessageCommand(awsSQSConfig);
 
-    return client.send(command);
+  return client.send(command);
 };
