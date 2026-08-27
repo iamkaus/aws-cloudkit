@@ -3,13 +3,17 @@ import { defineConfig } from 'tsup';
 export default defineConfig({
   entry: {
     index: 'src/index.ts',
-    's3/index': 'src/s3/index.ts',
-    'sqs/index': 'src/sqs/index.ts',
+    's3/index': 'src/s3-service/index.ts',
+    'sqs/index': 'src/sqs-service/index.ts',
   },
 
   format: ['esm'],
 
-  dts: true,
+  dts: {
+    compilerOptions: {
+      ignoreDeprecations: '6.0',
+    },
+  },
 
   sourcemap: true,
 

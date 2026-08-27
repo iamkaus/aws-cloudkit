@@ -12,12 +12,12 @@
       "import": "./dist/index.js"
     },
     "./s3": {
-      "types": "./dist/s3/index.d.ts",
-      "import": "./dist/s3/index.js"
+      "types": "./dist/s3-service/index.d.ts",
+      "import": "./dist/s3-service/index.js"
     },
     "./sqs": {
-      "types": "./dist/sqs/index.d.ts",
-      "import": "./dist/sqs/index.js"
+      "types": "./dist/sqs-service/index.d.ts",
+      "import": "./dist/sqs-service/index.js"
     }
   },
   "scripts": {
