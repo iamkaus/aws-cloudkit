@@ -1,26 +1,14 @@
-import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
+import { S3Client, PutObjectCommand, PutObjectCommandInput } from '@aws-sdk/client-s3';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 
-interface PutObjectSignedUrlParams {
-  bucket: string;
-  key: string;
-  contentType: string;
+type PutObjectSignedUrlParams = PutObjectCommandInput & {
   client: S3Client;
-  expiresIn: number;
-}
+  expiresIn?: number;
+};
 
-export const putObjectSignedUrl = async ({
-  bucket,
-  key,
-  contentType,
-  client,
-  expiresIn = 3600,
-}: PutObjectSignedUrlParams): Promise<string> => {
-  const command = new PutObjectCommand({
-    Bucket: bucket,
-    Key: key,
-    ContentType: contentType,
-  });
+export const putObjectSignedUrl = async (params: PutObjectSignedUrlParams): Promise<string> => {
+  const { client, expiresIn = 3600, ...awsS3Config } = params;
+  const command = new PutObjectCommand(awsS3Config);
 
   return getSignedUrl(client, command, {
     expiresIn: expiresIn,
