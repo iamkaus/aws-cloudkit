@@ -18,6 +18,10 @@
     "./sqs": {
       "types": "./dist/sqs-service/index.d.ts",
       "import": "./dist/sqs-service/index.js"
+    },
+    "./lambda": {
+      "types": "./dist/lambda-service/index.d.ts",
+      "import": "./dist/lambda-service/index.js"
     }
   },
   "scripts": {
