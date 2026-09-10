@@ -1,5 +1,5 @@
 import {
-  SQSClient,
+  type SQSClient,
   ListDeadLetterSourceQueuesCommand,
   type ListDeadLetterSourceQueuesCommandInput,
   type ListDeadLetterSourceQueuesCommandOutput,

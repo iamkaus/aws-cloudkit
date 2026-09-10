@@ -1,5 +1,5 @@
 import {
-  SQSClient,
+  type SQSClient,
   PurgeQueueCommand,
   type PurgeQueueCommandInput,
   type PurgeQueueCommandOutput,

@@ -1,5 +1,5 @@
 import {
-  LambdaClient,
+  type LambdaClient,
   GetFunctionCommand,
   type GetFunctionCommandInput,
   type GetFunctionCommandOutput,

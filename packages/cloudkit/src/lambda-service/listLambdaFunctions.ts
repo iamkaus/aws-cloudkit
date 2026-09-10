@@ -1,5 +1,5 @@
 import {
-  LambdaClient,
+  type LambdaClient,
   ListFunctionsCommand,
   type ListFunctionsCommandInput,
   type ListFunctionsCommandOutput,

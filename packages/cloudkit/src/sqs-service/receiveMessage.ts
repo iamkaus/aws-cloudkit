@@ -1,5 +1,5 @@
 import {
-  SQSClient,
+  type SQSClient,
   ReceiveMessageCommand,
   type ReceiveMessageCommandInput,
   type ReceiveMessageCommandOutput,

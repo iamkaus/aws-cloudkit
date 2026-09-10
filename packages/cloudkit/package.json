@@ -22,7 +22,11 @@
     "./lambda": {
       "types": "./dist/lambda-service/index.d.ts",
       "import": "./dist/lambda-service/index.js"
-    }
+    },
+    "./ec2": {
+    "types": "./dist/ec2/index.d.ts",
+    "import": "./dist/ec2/index.js"
+  }
   },
   "scripts": {
     "build": "tsup",

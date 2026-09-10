@@ -1,5 +1,5 @@
 import {
-  SQSClient,
+  type SQSClient,
   GetQueueAttributesCommand,
   type GetQueueAttributesCommandInput,
   type GetQueueAttributesCommandOutput,

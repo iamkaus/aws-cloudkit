@@ -1,6 +1,6 @@
 import {
   DeleteFunctionCommand,
-  LambdaClient,
+  type LambdaClient,
   type DeleteFunctionCommandInput,
   type DeleteFunctionCommandOutput,
 } from '@aws-sdk/client-lambda';

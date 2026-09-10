@@ -1,5 +1,5 @@
 import {
-  SQSClient,
+  type SQSClient,
   SendMessageBatchCommand,
   type SendMessageBatchCommandInput,
   type SendMessageBatchCommandOutput,

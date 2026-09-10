@@ -1,4 +1,7 @@
-import { SQSClient, type SQSClientConfig } from '@aws-sdk/client-sqs';
+import {
+  SQSClient,
+  type SQSClientConfig
+} from '@aws-sdk/client-sqs';
 
 type SQSClientParams = SQSClientConfig & {
   accessKey: string;

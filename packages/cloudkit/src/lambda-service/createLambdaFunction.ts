@@ -1,6 +1,6 @@
 import {
   CreateFunctionCommand,
-  LambdaClient,
+  type LambdaClient,
   type CreateFunctionCommandInput,
   type CreateFunctionCommandOutput,
 } from '@aws-sdk/client-lambda';

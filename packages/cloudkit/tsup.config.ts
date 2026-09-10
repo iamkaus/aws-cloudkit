@@ -6,6 +6,7 @@ export default defineConfig({
     's3/index': 'src/s3-service/index.ts',
     'sqs/index': 'src/sqs-service/index.ts',
     'lambda/index': 'src/lambda-service/index.ts',
+    'ec2/index': 'src/ec2-service/index.ts',
   },
 
   format: ['esm'],
@@ -23,7 +24,7 @@ export default defineConfig({
   external: [
     '@aws-sdk/client-s3',
     '@aws-sdk/client-sqs',
-    '@aws-sdk/client-sesv2',
-    '@aws-sdk/client-secrets-manager',
+    "@aws-sdk/client-ec2",
+    "@aws-sdk/client-lambda"
   ],
 });

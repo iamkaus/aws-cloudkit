@@ -1,5 +1,5 @@
 import {
-  SQSClient,
+  type SQSClient,
   ChangeMessageVisibilityBatchCommand,
   type ChangeMessageVisibilityBatchCommandInput,
   type ChangeMessageVisibilityBatchCommandOutput,

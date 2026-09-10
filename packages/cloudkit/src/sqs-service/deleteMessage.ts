@@ -1,5 +1,5 @@
 import {
-  SQSClient,
+  type SQSClient,
   DeleteMessageCommand,
   type DeleteMessageCommandInput,
   type DeleteMessageCommandOutput,

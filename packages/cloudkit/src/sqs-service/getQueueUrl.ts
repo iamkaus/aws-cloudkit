@@ -1,5 +1,5 @@
 import {
-  SQSClient,
+  type SQSClient,
   GetQueueUrlCommand,
   type GetQueueUrlCommandInput,
   type GetQueueUrlCommandOutput,
