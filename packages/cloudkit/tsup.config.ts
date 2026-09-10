@@ -5,7 +5,7 @@ export default defineConfig({
     index: 'src/index.ts',
     's3/index': 'src/s3-service/index.ts',
     'sqs/index': 'src/sqs-service/index.ts',
-    'lambda/index': 'src/lambda-service/index.ts'
+    'lambda/index': 'src/lambda-service/index.ts',
   },
 
   format: ['esm'],
