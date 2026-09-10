@@ -35,6 +35,12 @@ jobs:
       - name: Lint Code
         run: pnpm lint
 
+      - name: Lint Fix
+        run: pnpm lint:fix
+
+      - name: Format Code
+        run: pnpm format
+
       - name: Check Formatting
         run: pnpm format:check
 
