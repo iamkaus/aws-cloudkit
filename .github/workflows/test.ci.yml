@@ -32,6 +32,12 @@ jobs:
       - name: Typecheck Code
         run: pnpm --filter @aws/cloudkit typecheck
 
+      - name: Lint Code
+        run: pnpm lint
+
+      - name: Check Formatting
+        run: pnpm format:check
+
       - name: Run Tests
         run: pnpm --filter @aws/cloudkit test
 
