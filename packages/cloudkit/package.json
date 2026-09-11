@@ -24,9 +24,9 @@
       "import": "./dist/lambda-service/index.js"
     },
     "./ec2": {
-    "types": "./dist/ec2/index.d.ts",
-    "import": "./dist/ec2/index.js"
-  }
+      "types": "./dist/ec2/index.d.ts",
+      "import": "./dist/ec2/index.js"
+    }
   },
   "scripts": {
     "build": "tsup",
@@ -42,7 +42,8 @@
     "@aws-sdk/client-lambda": "^3.1121.0",
     "@aws-sdk/client-s3": "^3.1116.0",
     "@aws-sdk/client-sqs": "^3.1116.0",
-    "@aws-sdk/s3-request-presigner": "^3.1116.0"
+    "@aws-sdk/s3-request-presigner": "^3.1116.0",
+    "dotenv": "^17.4.2"
   },
   "devDependencies": {
     "tsup": "^8.5.1",
