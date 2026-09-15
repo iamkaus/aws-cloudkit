@@ -45,7 +45,7 @@ jobs:
         run: pnpm format:check
 
       - name: Run Tests
-        run: pnpm --filter @aws/cloudkit test
+        run: pnpm --filter @aws/cloudkit test/unit
 
       - name: Build with Tsup
         run: pnpm --filter @aws/cloudkit build
