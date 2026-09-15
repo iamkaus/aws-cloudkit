@@ -1,7 +1,7 @@
 import {
   type S3Client,
   DeleteObjectCommand,
-  type DeleteObjectCommandInput 
+  type DeleteObjectCommandInput,
 } from '@aws-sdk/client-s3';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 

@@ -1,8 +1,4 @@
-import { 
-  type LambdaClient,
-  InvokeCommand,
-  type InvokeCommandInput
-} from '@aws-sdk/client-lambda';
+import { type LambdaClient, InvokeCommand, type InvokeCommandInput } from '@aws-sdk/client-lambda';
 import { Buffer } from 'node:buffer';
 
 type InvokeCommandParams = InvokeCommandInput & {

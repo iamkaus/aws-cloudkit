@@ -1,20 +1,20 @@
 import {
-    type EC2Client,
-    StartInstancesCommand,
-    type StartInstancesCommandInput,
-    type StartInstancesCommandOutput,
+  type EC2Client,
+  StartInstancesCommand,
+  type StartInstancesCommandInput,
+  type StartInstancesCommandOutput,
 } from '@aws-sdk/client-ec2';
 
 type StartInstancesParams = StartInstancesCommandInput & {
-    client: EC2Client;
+  client: EC2Client;
 };
 
 export const startInstances = async (
-    params: StartInstancesParams,
+  params: StartInstancesParams,
 ): Promise<StartInstancesCommandOutput> => {
-    const { client, ...awsEC2Config } = params;
+  const { client, ...awsEC2Config } = params;
 
-    const command = new StartInstancesCommand(awsEC2Config);
+  const command = new StartInstancesCommand(awsEC2Config);
 
-    return client.send(command);
+  return client.send(command);
 };

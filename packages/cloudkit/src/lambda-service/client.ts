@@ -1,7 +1,4 @@
-import {
-  LambdaClient,
-  LambdaClientConfig
-} from '@aws-sdk/client-lambda';
+import { LambdaClient, LambdaClientConfig } from '@aws-sdk/client-lambda';
 
 type LambdaClientsParams = LambdaClientConfig & {
   accessKey: string;

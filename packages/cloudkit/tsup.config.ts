@@ -24,7 +24,7 @@ export default defineConfig({
   external: [
     '@aws-sdk/client-s3',
     '@aws-sdk/client-sqs',
-    "@aws-sdk/client-ec2",
-    "@aws-sdk/client-lambda"
+    '@aws-sdk/client-ec2',
+    '@aws-sdk/client-lambda',
   ],
 });

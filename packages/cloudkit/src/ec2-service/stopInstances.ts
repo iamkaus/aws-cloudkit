@@ -1,20 +1,20 @@
 import {
-    type EC2Client,
-    StopInstancesCommand,
-    type StopInstancesCommandInput,
-    type StopInstancesCommandOutput,
+  type EC2Client,
+  StopInstancesCommand,
+  type StopInstancesCommandInput,
+  type StopInstancesCommandOutput,
 } from '@aws-sdk/client-ec2';
 
 type StopInstancesParams = StopInstancesCommandInput & {
-    client: EC2Client;
+  client: EC2Client;
 };
 
 export const stopInstances = async (
-    params: StopInstancesParams,
+  params: StopInstancesParams,
 ): Promise<StopInstancesCommandOutput> => {
-    const { client, ...awsEC2Config } = params;
+  const { client, ...awsEC2Config } = params;
 
-    const command = new StopInstancesCommand(awsEC2Config);
+  const command = new StopInstancesCommand(awsEC2Config);
 
-    return client.send(command);
+  return client.send(command);
 };

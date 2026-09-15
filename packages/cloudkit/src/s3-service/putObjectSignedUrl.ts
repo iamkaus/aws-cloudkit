@@ -1,8 +1,4 @@
-import {
-  type S3Client,
-  PutObjectCommand,
-  PutObjectCommandInput 
-} from '@aws-sdk/client-s3';
+import { type S3Client, PutObjectCommand, PutObjectCommandInput } from '@aws-sdk/client-s3';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 
 type PutObjectSignedUrlParams = PutObjectCommandInput & {
