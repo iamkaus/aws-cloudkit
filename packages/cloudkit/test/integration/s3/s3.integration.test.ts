@@ -100,6 +100,33 @@ describe('S3 integration', () => {
   // `describe` sequentially by default, so this holds as long as nothing
   // here is marked `.concurrent`.
 
+  /**
+   * Smoke test only — this does NOT prove the URL actually works against S3.
+   *
+   * Presigning is a pure client-side computation (SigV4 math over the
+   * request the SDK would have sent); it never touches the network, so
+   * this passes even if `bucketName` is never created and even if the
+   * bucket already exists.
+   *
+   * We don't invoke this URL with fetch() here (unlike the put/get/delete
+   * tests below) because CreateBucket outside us-east-1 requires a
+   * LocationConstraint XML body, and the SDK signs Content-Length against
+   * that exact serialized body. Reconstructing a byte-identical XML body
+   * from outside the SDK's own marshaller isn't practical, so an
+   * unmatched Content-Length here would fail with SignatureDoesNotMatch
+   * even though the signing logic itself is correct — see the bucket
+   * creation in beforeAll, which is a real SDK call instead.
+   *
+   * TODO: if we want this to actually prove the URL is usable (not just
+   * well-formed), either:
+   *   (a) reconstruct the exact CreateBucketConfiguration XML body and
+   *       send it as the fetch body, matching the signed Content-Length, or
+   *   (b) have createS3BucketSignedUrl return the body it signed alongside
+   *       the URL, so the test can replay it exactly.
+   * Until then, this only catches gross breakage (wrong protocol, bucket
+   * name missing from the URL) — not a subtly broken signature.
+   */
+
   it('generates a signed URL for creating a bucket', async () => {
     const createBucketUrl = await createS3BucketSignedUrl({
       client,

@@ -16,9 +16,6 @@ export const createS3BucketSignedUrl = async (
 ): Promise<string> => {
   const { client, expiresIn = 3600, ...awsOptions } = params;
 
-  // us-east-1 is the one region S3 rejects a CreateBucketConfiguration for,
-  // so only attach LocationConstraint outside of it — and don't clobber a
-  // config the caller passed in explicitly.
   const region = await client.config.region();
 
   const createBucketConfiguration =
