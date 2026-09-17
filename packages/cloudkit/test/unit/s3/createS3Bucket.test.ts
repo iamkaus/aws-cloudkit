@@ -57,7 +57,7 @@ describe('createS3BucketSignedUrl', () => {
     await createS3BucketSignedUrl({
       client,
       Bucket: 'test-bucket',
-      expiresIn: 3600
+      expiresIn: 3600,
     });
 
     expect(getSignedUrl).toHaveBeenCalledOnce();

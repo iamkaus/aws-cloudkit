@@ -28,7 +28,7 @@ describe('createS3Client', () => {
         accessKeyId: 'test-access-key',
         secretAccessKey: 'test-secret-key',
       },
-      maxAttempts: 5
+      maxAttempts: 5,
     });
 
     expect(await client.config.region()).toBe('ap-south-1');
