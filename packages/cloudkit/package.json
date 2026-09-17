@@ -32,6 +32,7 @@
     "build": "tsup",
     "test": "vitest run",
     "test:unit": "vitest run test/unit",
+    "test:unit-s3": "vitest run test/unit/s3",
     "test:ec2": "vitest run test/integration/ec2",
     "test:s3": "vitest run test/integration/s3",
     "test:lambda": "vitest run test/integration/lambda",

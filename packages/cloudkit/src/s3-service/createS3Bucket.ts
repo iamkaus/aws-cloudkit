@@ -8,13 +8,15 @@ import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 
 type CreateS3BucketSignedUrlParams = CreateBucketCommandInput & {
   client: S3Client;
-  expiresIn?: number;
+  expiresIn: number;
 };
+
+const MAX_PRESIGNED_URL_EXPIRATION: number = 3600;
 
 export const createS3BucketSignedUrl = async (
   params: CreateS3BucketSignedUrlParams,
 ): Promise<string> => {
-  const { client, expiresIn = 3600, ...awsOptions } = params;
+  const { client, expiresIn, ...awsOptions } = params;
 
   const region = await client.config.region();
 
@@ -32,6 +34,10 @@ export const createS3BucketSignedUrl = async (
       CreateBucketConfiguration: createBucketConfiguration,
     }),
   });
+
+  if (expiresIn < 1 || expiresIn > MAX_PRESIGNED_URL_EXPIRATION) {
+    throw new RangeError(`expiresIn must be between 1 and ${MAX_PRESIGNED_URL_EXPIRATION} seconds`);
+  }
 
   return getSignedUrl(client, command, {
     expiresIn,
